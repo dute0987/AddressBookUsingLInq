@@ -22,5 +22,14 @@ namespace AddressBookLinq
             table.Columns.Add("Emails");
 
         }
+        public void DisplayAddressBook(DataTable table)
+        {
+            DataRow[] dr = table.Select();
+            for (int i = 0; i < dr.Length; i++)
+            {
+                Console.WriteLine("First name:" + dr[i][0] + " Second Name:" + dr[i][1] + " City:" + dr[i][2] + " State:" + dr[i][3] +
+                    " Zip No:" + dr[i][4] + " gmail:" + dr[i][5]);
+            }
+        }
     }
 }
